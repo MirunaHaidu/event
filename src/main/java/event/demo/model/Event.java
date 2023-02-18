@@ -21,7 +21,7 @@ private Integer id;
     private LocalDate date;
     @Column
     private String description;
-    @Column
+//    @Column
     private String createdBy;
 
     public Integer getId() {

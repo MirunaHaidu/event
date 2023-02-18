@@ -8,7 +8,7 @@ import event.demo.service.EventService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-@Service
+@Service("test_qualifier_eventServiceImpl")
 public class EventServiceImpl implements EventService {
 
     private final EventRepository eventRepository;
