@@ -1,33 +1,15 @@
-package com.sda.event.model;
+package com.sda.event.dto;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
 
-import java.util.List;
-
-@Entity
-public class User {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class UserInfoDto {
     private Integer id;
-    @Column
+
     private String name;
-    @Column
+
     private String email;
-    @Column(nullable = false, unique = true)
+
     private String password;
-    @ManyToMany
-    @JoinTable(name="user_role",
-            joinColumns = {@JoinColumn(name = "id_user")},
-    inverseJoinColumns = {@JoinColumn(name = "id_role")})
-    private List<Role> roles;
-
-    public List<Role> getRoles() {
-        return roles;
-    }
-
-    public void setRoles(List<Role> roles) {
-        this.roles = roles;
-    }
 
     public Integer getId() {
         return id;

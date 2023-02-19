@@ -1,5 +1,6 @@
 package com.sda.event.dto;
 
+import com.sda.event.model.User;
 import jakarta.persistence.Column;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -9,16 +10,14 @@ import java.time.LocalDate;
 
 public class EventCreateDto {
     @NotBlank
-
     private String title;
-
-  @NotNull
+    @NotNull
     private LocalDate date;
     @NotBlank
     @Length(min = 20, message = "Please insert minimum 20 characters")
     private String description;
     @NotBlank
-    private String createdBy;
+    private User createdBy;
 
     public String getTitle() {
         return title;
@@ -44,11 +43,11 @@ public class EventCreateDto {
         this.description = description;
     }
 
-    public String getCreatedBy() {
+    public User getCreatedBy() {
         return createdBy;
     }
 
-    public void setCreatedBy(String createdBy) {
+    public void setCreatedBy(User createdBy) {
         this.createdBy = createdBy;
     }
 }
