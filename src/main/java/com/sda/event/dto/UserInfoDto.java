@@ -1,10 +1,24 @@
 package com.sda.event.dto;
 
+
+import jakarta.persistence.Column;
+
 public class UserInfoDto {
-    private String name;
-    private String password;
-    private String email;
     private Integer id;
+
+    private String name;
+
+    private String email;
+
+    private String password;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
 
     public String getName() {
@@ -14,6 +28,7 @@ public class UserInfoDto {
     public void setName(String name) {
         this.name = name;
     }
+
 
     public String getPassword() {
         return password;
@@ -31,11 +46,4 @@ public class UserInfoDto {
         this.email = email;
     }
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
 }

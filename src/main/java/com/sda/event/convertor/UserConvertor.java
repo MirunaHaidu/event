@@ -8,19 +8,19 @@ public class UserConvertor {
 
     public static User createDtoToEntity(UserCreateDto userCreateDto){
         User user = new User();
-        user.setEmail(userCreateDto.getEmail());
         user.setName(userCreateDto.getName());
+        user.setEmail(userCreateDto.getEmail());
         user.setPassword(userCreateDto.getPassword());
+        return user;
 
-        return  user;
     }
 
     public static UserInfoDto entityToInfoDto(User user){
         UserInfoDto userInfoDto = new UserInfoDto();
-        userInfoDto.setEmail(user.getEmail());
+
         userInfoDto.setName(user.getName());
-        userInfoDto.setPassword(user.getPassword());
-        userInfoDto.setId(user.getId());
+        userInfoDto.setEmail(user.getEmail());
+//        userInfoDto.setPassword(user.getPassword());
 
         return userInfoDto;
     }
