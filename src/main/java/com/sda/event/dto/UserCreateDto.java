@@ -1,15 +1,18 @@
 package com.sda.event.dto;
 
 import jakarta.persistence.Column;
+
 import jakarta.persistence.UniqueConstraint;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import org.hibernate.validator.constraints.Length;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
+
 public class UserCreateDto {
 
     @NotBlank
+
     @Length(max = 50)
     private String name;
     @Email(message = "Invalid email address")
@@ -40,10 +43,12 @@ public class UserCreateDto {
 
     public void setPassword(String password) {
 
+
         this.password = password;
     }
 
 //    BCryptPasswordEncoder passwordEncoder= new BCryptPasswordEncoder();
 //        this.password = passwordEncoder.encode(password);
+
 
 }

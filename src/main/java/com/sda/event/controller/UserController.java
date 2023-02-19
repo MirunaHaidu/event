@@ -1,5 +1,6 @@
 package com.sda.event.controller;
 
+
 import com.sda.event.dto.UserCreateDto;
 import com.sda.event.dto.UserInfoDto;
 import com.sda.event.model.User;
@@ -18,10 +19,12 @@ import java.util.Optional;
 //@RequestMapping("/api/v1/user")
 public class UserController {
     private final UserService userService;
+
     @Autowired
     public UserController(UserService userService) {
         this.userService = userService;
     }
+
 //    @PostMapping("/register")
 //    public ResponseEntity<UserInfoDto> registerUser(@RequestBody @Valid UserCreateDto userCreateDto){
 //       return ResponseEntity.ok(userService.registerUser(userCreateDto));
@@ -70,6 +73,7 @@ public class UserController {
     //    model.addAttribute("users", users);
     //    return "users";
 //    }
+
 
 
 }

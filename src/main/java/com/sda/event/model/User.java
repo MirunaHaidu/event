@@ -2,6 +2,9 @@ package com.sda.event.model;
 
 import jakarta.persistence.*;
 
+
+import javax.management.relation.Role;
+
 import java.util.List;
 
 @Entity
@@ -13,6 +16,7 @@ public class User {
     private String name;
     @Column
     private String email;
+
     @Column(nullable = false, unique = true)
     private String password;
     @ManyToMany
@@ -28,6 +32,7 @@ public class User {
     public void setRoles(List<Role> roles) {
         this.roles = roles;
     }
+
 
     public Integer getId() {
         return id;
