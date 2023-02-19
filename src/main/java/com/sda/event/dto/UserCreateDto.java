@@ -1,26 +1,25 @@
 package com.sda.event.dto;
 
 import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+
+import jakarta.persistence.UniqueConstraint;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import org.hibernate.validator.constraints.Length;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
 
 public class UserCreateDto {
 
     @NotBlank
-    @Length(max = 50, message = "Maximum name length is 50 characters")
+
+    @Length(max = 50)
     private String name;
-
-    @Email
-    @NotBlank
+    @Email(message = "Invalid email address")
     private String email;
-
-    @NotBlank
     @Length(min = 8, max = 30)
     private String password;
+
 
     public String getName() {
         return name;
@@ -43,6 +42,13 @@ public class UserCreateDto {
     }
 
     public void setPassword(String password) {
+
+
         this.password = password;
     }
+
+//    BCryptPasswordEncoder passwordEncoder= new BCryptPasswordEncoder();
+//        this.password = passwordEncoder.encode(password);
+
+
 }

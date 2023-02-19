@@ -11,7 +11,7 @@ public class EventConvertor {
         event.setTitle(eventCreateDto.getTitle());
         event.setDate(eventCreateDto.getDate());
         event.setDescription(eventCreateDto.getDescription());
-        event.setCreatedBy(eventCreateDto.getCreatedBy());
+//        event.setCreatedBy(eventCreateDto.getCreatedBy());
         return event;
     }
 
@@ -20,7 +20,7 @@ public class EventConvertor {
         eventInfoDto.setTitle(event.getTitle());
         eventInfoDto.setDate(event.getDate());
         eventInfoDto.setDescription(event.getDescription());
-        eventInfoDto.setCreatedBy(event.getCreatedBy());
+//        eventInfoDto.setCreatedBy(event.getCreatedBy());
         return eventInfoDto;
     }
 
