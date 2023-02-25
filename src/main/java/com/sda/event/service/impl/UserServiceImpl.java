@@ -1,5 +1,6 @@
 package com.sda.event.service.impl;
 
+import com.sda.event.controller.UserController;
 import com.sda.event.convertor.UserConvertor;
 import com.sda.event.dto.UserCreateDto;
 import com.sda.event.dto.UserInfoDto;
@@ -33,8 +34,11 @@ public class UserServiceImpl implements UserService {
 
     public UserInfoDto registerUser(UserCreateDto userCreateDto) {
 
-        return UserConvertor.entityToInfoDto(userRepository.save(UserConvertor
-                .createDtoToEntity(userCreateDto)));
+//        return UserConvertor.entityToInfoDto(userRepository.save(UserConvertor
+//                .createDtoToEntity(userCreateDto)));
+        User user = UserConvertor.createDtoToEntity(userCreateDto);
+        userRepository.save(user);
+        return UserConvertor.entityToInfoDto(user);
     }
 
     @Override
@@ -51,14 +55,15 @@ public class UserServiceImpl implements UserService {
     @Override
     public User findByEmail(String email)
     {
-        Optional<User> user = userRepository.findByEmail(email);
-        if(user.isPresent())
-        {
-            return user.get();
-        }
-        else {
-            throw new RuntimeException("User not find Exception");
-        }
+        return userRepository.findByEmail(email);
+        //Optional<User> user = userRepository.findByEmail(email);
+      //  if(user.isPresent())
+     //   {
+      //      return user.get();
+      //  }
+      //  else {
+      //      throw new RuntimeException("User not find Exception");
+     //   }
 
     }
 

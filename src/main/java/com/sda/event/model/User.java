@@ -3,8 +3,6 @@ package com.sda.event.model;
 import jakarta.persistence.*;
 
 
-import javax.management.relation.Role;
-
 import java.util.List;
 
 @Entity
@@ -17,7 +15,7 @@ public class User {
     @Column
     private String email;
 
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false)
     private String password;
     @ManyToMany
     @JoinTable(name="user_role",
