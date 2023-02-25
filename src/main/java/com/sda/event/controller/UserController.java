@@ -55,7 +55,7 @@ public class UserController {
     public String registration(@Valid @ModelAttribute("user") UserCreateDto userCreateDto,
                                BindingResult result,
                                Model model){
-       // Optional<User> existing = userRepository.findByEmail(user.getEmail());
+//        Optional<User> existing = userRepository.findByEmail(user.getEmail());
         User existing = userService.findByEmail(userCreateDto.getEmail());
         if (existing !=null) {
             result.rejectValue("email", null, "There is already an account registered with that email");

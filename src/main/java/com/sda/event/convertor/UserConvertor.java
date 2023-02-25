@@ -18,7 +18,7 @@ public class UserConvertor {
     public static UserInfoDto entityToInfoDto(User user){
         UserInfoDto userInfoDto = new UserInfoDto();
 
-        userInfoDto.setName(user.getName());
+        userInfoDto.setFirstName(user.getName());
         userInfoDto.setEmail(user.getEmail());
 //        userInfoDto.setPassword(user.getPassword());
 
